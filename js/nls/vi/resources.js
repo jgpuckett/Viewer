@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Không thể tạo bản đồ"
         },
+        "nav":{
+            "next": "Tiếp theo",
+            "previous": "Trước",
+            "close": "Đóng"
+        },
         "tools":{
             "search":{
                 "error": "Không thể tìm thấy vị trí",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Hướng dọc'
 			    },
 			    "legend": "Thêm chú giải vào kết quả đầu ra",
-                "title": "Đ_Title___ớ",
-                "titlePrompt": "Đ_Add custom title______ớ"
+                "title": "Tiêu đề",
+                "titlePrompt": "Thêm tiêu đề tùy chỉnh"
             },
 			"share": {
 				"extent": "Sử dụng phạm vi bản đồ hiện tại",

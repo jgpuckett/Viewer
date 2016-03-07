@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Nelze vytvořit mapu"
         },
+        "nav":{
+            "next": "Další",
+            "previous": "Předchozí",
+            "close": "Zavřít"
+        },
         "tools":{
             "search":{
                 "error": "Umístění nebylo nalezeno.",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Na výšku'
 			    },
 			    "legend": "Přidat legendu do výstupu",
-                "title": "Ř_Title___ů",
-                "titlePrompt": "Ř_Add custom title______ů"
+                "title": "Nadpis",
+                "titlePrompt": "Přidat vlastní název"
             },
 			"share": {
 				"extent": "Použít aktuální rozsah mapy",

@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Nevar izveidot karti"
         },
+        "nav":{
+            "next": "Tālāk",
+            "previous": "Iepriekšējais",
+            "close": "Aizvērt"
+        },
         "tools":{
             "search":{
                 "error": "Izvietojumu nevarēja atrast",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Portrets'
 			    },
 			    "legend": "Pievienot apzīmējumus izvadei",
-                "title": "ķ_Title___ū",
-                "titlePrompt": "ķ_Add custom title______ū"
+                "title": "Nosaukums",
+                "titlePrompt": "Pievienot pielāgotu virsrakstu"
             },
 			"share": {
 				"extent": "Lieto pašreizējo kartes pārklājumu",

@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "يتعذر إنشاء الخريطة"
         },
+        "nav":{
+            "next": "التالي",
+            "previous": "السابق",
+            "close": "إغلاق"
+        },
         "tools":{
             "search":{
                 "error": "تعذر العثور على الموقع",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'وضع عمودي'
 			    },
 			    "legend": "إضافة وسيلة الإيضاح إلى الناتج",
-                "title": "بيت_Title___لاحقة",
-                "titlePrompt": "بيت_Add custom title______لاحقة"
+                "title": "العنوان",
+                "titlePrompt": "إضافة عنوان مخصص"
             },
 			"share": {
 				"extent": "استخدم مدى الخريطة الحالية",

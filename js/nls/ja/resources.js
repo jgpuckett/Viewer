@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "マップを作成できません"
         },
+        "nav":{
+            "next": "次へ",
+            "previous": "前へ",
+            "close": "閉じる"
+        },
         "tools":{
             "search":{
                 "error": "場所が見つかりませんでした",
@@ -35,8 +40,8 @@ define(
 			      "label4": '縦'
 			    },
 			    "legend": "凡例を出力に追加",
-                "title": "須_Title___鷗",
-                "titlePrompt": "須_Add custom title______鷗"
+                "title": "タイトル",
+                "titlePrompt": "カスタム タイトルの追加"
             },
 			"share": {
 				"extent": "現在のマップ範囲を使用",

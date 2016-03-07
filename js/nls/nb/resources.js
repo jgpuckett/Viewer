@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Kan ikke opprette kart"
         },
+        "nav":{
+            "next": "Neste",
+            "previous": "Forrige",
+            "close": "Lukk"
+        },
         "tools":{
             "search":{
                 "error": "Finner ikke lokasjonen",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Stående'
 			    },
 			    "legend": "Legg til kartforklaring i resultatet",
-                "title": "å_Title___ø",
-                "titlePrompt": "å_Add custom title______ø"
+                "title": "Tittel",
+                "titlePrompt": "Legg til egendefinert tittel"
             },
 			"share": {
 				"extent": "Bruk gjeldende kartutstrekning",

@@ -22,6 +22,10 @@ define({
   "queryForGroupInfo": false,
   // When true, the template will query arcgis.com for the items contained within the group
   "queryForGroupItems": false,
+  // Use a local hosted webmap instead of a webmap on ArcGIS or portal.
+  "useLocalWebmap": false,
+  // Webmap file to use for the local webmap
+  "localWebmapFile": "config/demoMap",
   //When true the template will query arcgis.com for default settings for helper services, units etc. If you
   //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
   //default values for any items you need using the helper services and units properties.
@@ -43,7 +47,7 @@ define({
   //if you want users to be able to specify lat/lon coordinates that define the map's center or
   //specify an alternate basemap via a url parameter.
   "urlItems": [
-    "color","extent", "center", "level", "feature", "find" // example param. ?theme=<my theme>
+    "color","extent", "center", "level", "marker", "feature", "find" // example param. ?theme=<my theme>
   ],
   // For esri hosted environments only. Will automatically create a sharingurl and proxyurl for the application.
   esriEnvironment: true

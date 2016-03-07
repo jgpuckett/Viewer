@@ -60,8 +60,6 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
                     }
                     domStyle.set(win.body(), "overflow-y", "auto");
                 }
-
-
             }));
             domConstruct.empty(this.pPages);
             // add blank page
@@ -76,7 +74,9 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
         },
         _hasScrollbar: function () {
             // The Modern solution
-            if (typeof window.innerWidth === 'number') return window.innerWidth > document.documentElement.clientWidth;
+            if (typeof window.innerWidth === "number") {
+                return window.innerWidth > document.documentElement.clientWidth;
+            }
 
             // rootElem for quirksmode
             var rootElem = document.documentElement || document.body;
@@ -84,20 +84,24 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             // Check overflow style property on body for fauxscrollbars
             var overflowStyle;
 
-            if (typeof rootElem.currentStyle !== 'undefined') overflowStyle = rootElem.currentStyle.overflow;
+            if (typeof rootElem.currentStyle !== "undefined") {
+                overflowStyle = rootElem.currentStyle.overflow;
+            }
 
-            overflowStyle = overflowStyle || window.getComputedStyle(rootElem, '').overflow;
+            overflowStyle = overflowStyle || window.getComputedStyle(rootElem, "").overflow;
 
             // Also need to check the Y axis overflow
             var overflowYStyle;
 
-            if (typeof rootElem.currentStyle !== 'undefined') overflowYStyle = rootElem.currentStyle.overflowY;
+            if (typeof rootElem.currentStyle !== "undefined") {
+                overflowYStyle = rootElem.currentStyle.overflowY;
+            }
 
-            overflowYStyle = overflowYStyle || window.getComputedStyle(rootElem, '').overflowY;
+            overflowYStyle = overflowYStyle || window.getComputedStyle(rootElem, "").overflowY;
 
             var contentOverflows = rootElem.scrollHeight > rootElem.clientHeight;
             var overflowShown = /^(visible|auto)$/.test(overflowStyle) || /^(visible|auto)$/.test(overflowYStyle);
-            var alwaysShowScroll = overflowStyle === 'scroll' || overflowYStyle === 'scroll';
+            var alwaysShowScroll = overflowStyle === "scroll" || overflowYStyle === "scroll";
 
             return (contentOverflows && overflowShown) || (alwaysShowScroll);
         },
@@ -108,26 +112,29 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             // add tool
             var pTool = domConstruct.create("div", {
                 className: "panelTool",
+                role: "button",
+                tabindex: "0",
                 id: "panelTool_" + name
             }, this.pTools);
 
             if (!has("touch")) {
-                //add a tooltip 
+                //add a tooltip
                 var tip = this.config.i18n.tooltips[name] || name;
                 domAttr.set(pTool, "data-title", tip);
                 domAttr.set(pTool, "title", tip);
-                on(pTool, mouse.enter, function(){
-                    domAttr.set(pTool, "title","");
+                on(pTool, mouse.enter, function () {
+                    domAttr.set(pTool, "title", "");
                 });
-                on(pTool, mouse.leave, function(){
+                on(pTool, mouse.leave, function () {
                     domAttr.set(pTool, "title", tip);
-                });            
-                
+                });
+
             }
 
             domConstruct.create("img", {
                 className: "tool",
-                src: "images/icons_" + this.config.icons + "/" + name + ".png"
+                src: "images/icons_" + this.config.icons + "/" + name + ".png",
+                alt: name
             }, pTool);
             on(pTool, "click", lang.hitch(this, this._toolClick, name));
             this.tools.push(name);
@@ -160,7 +167,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
 
             domConstruct.create("div", {
                 className: "pageHeaderImg",
-                innerHTML: "<img class='pageIcon' src ='images/icons_" + this.config.icons + "/" + name + ".png'/>"
+                innerHTML: "<img class='pageIcon' src ='images/icons_" + this.config.icons + "/" + name + ".png' alt="+ name +"/>"
             }, pageHeader);
 
 
@@ -173,24 +180,39 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
         },
 
         updatePageNavigation: function () {
-            //Adds the up/down and close tools to the page header. 
+            //Adds the up/down and close tools to the page header.
             for (var i = 0; i < this.tools.length; i++) {
                 var name = this.tools[i];
                 var pageClose = domConstruct.create("div", {
-                    className: "pageClose"
+                    className: "pageNav pageClose",
+                    tabindex: "0",
+                    title: this.config.i18n.nav.close
                 }, "pageHeader_" + name);
-                on(pageClose, "click", lang.hitch(this, this._closePage));
+                if(this.config.icons === "black"){
+                    domClass.add(pageClose, "icons-dark");
+                }
+                on(pageClose, "click, keypress", lang.hitch(this, this.closePage));
 
                 var pageUp = domConstruct.create("div", {
-                    className: "pageUp"
+                    className: "pageNav pageUp",
+                    tabindex: "0",
+                    title: this.config.i18n.nav.previous
                 }, "pageHeader_" + name);
-                on(pageUp, "click", lang.hitch(this, this._showPreviousPage, name));
+                if(this.config.icons === "black"){
+                    domClass.add(pageUp, "icons-dark");
+                }
+                on(pageUp, "click, keypress", lang.hitch(this, this._showPreviousPage, name));
 
                 if (name != this.tools[this.tools.length - 1]) {
                     var pageDown = domConstruct.create("div", {
-                        className: "pageDown"
+                        className: "pageNav pageDown",
+                        tabindex: "0",
+                        title: this.config.i18n.nav.next
                     }, "pageHeader_" + name);
-                    on(pageDown, "click", lang.hitch(this, this._showNextPage, name));
+                    if(this.config.icons === "black"){
+                        domClass.add(pageDown, "icons-dark");
+                    }
+                    on(pageDown, "click, keypress", lang.hitch(this, this._showNextPage, name));
                 }
 
             }
@@ -202,7 +224,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
         },
 
         activateTool: function (name) {
-            //Instead of scrolling to the tool just go there. 
+            //Instead of scrolling to the tool just go there.
             var num = this._getPageNum(name) + 1;
             var box = html.getContentBox(dom.byId("panelContent"));
 
@@ -242,6 +264,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
         _showPreviousPage: function (name) {
             var num = this._getPageNum(name);
             this._scrollToPage(num);
+
         },
 
         _showNextPage: function (name) {
@@ -249,7 +272,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             this._scrollToPage(num);
         },
 
-        _closePage: function () {
+        closePage: function (e) {
             this._scrollToPage(-1);
         },
         _scrollToPage: function (num) {
@@ -343,9 +366,6 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
                 domClass.add("panelTool_" + name, "panelToolActive");
             }
             this.emit("updateTool", name);
-
-
-
         },
         _updateMap: function () {
             if (this.map) {
@@ -363,7 +383,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
         _menuClick: function () {
             if (query("#panelTools").style("display") == "block") {
                 query("#panelTools").style("display", "none");
-                this._closePage();
+                this.closePage();
 
             } else {
                 query("#panelTools").style("display", "block");

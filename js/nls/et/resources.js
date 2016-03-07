@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Kaardi loomine ebaõnnestus"
         },
+        "nav":{
+            "next": "Järgmine",
+            "previous": "Eelmine",
+            "close": "Sulge"
+        },
         "tools":{
             "search":{
                 "error": "Asukohta ei leitud",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Vertikaalpaigutus'
 			    },
 			    "legend": "Lisa väljundile legend",
-                "title": "Š_Title___ä",
-                "titlePrompt": "Š_Add custom title______ä"
+                "title": "Pealkiri",
+                "titlePrompt": "Lisa kohandatud pealkiri"
             },
 			"share": {
 				"extent": "Kasuta praeguse kaardi ulatust",

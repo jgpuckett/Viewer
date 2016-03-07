@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Impossible de créer la carte"
         },
+        "nav":{
+            "next": "Suivant",
+            "previous": "Précédent",
+            "close": "Fermer"
+        },
         "tools":{
             "search":{
                 "error": "Emplacement introuvable",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Portrait'
 			    },
 			    "legend": "Ajouter la légende à la sortie",
-                "title": "æ_Title___Â",
-                "titlePrompt": "æ_Add custom title______Â"
+                "title": "Titre",
+                "titlePrompt": "Ajouter un titre personnalisé"
             },
 			"share": {
 				"extent": "Utiliser l’étendue courante de la carte",

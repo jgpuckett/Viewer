@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "맵을 생성할 수 없음"
         },
+        "nav":{
+            "next": "다음",
+            "previous": "이전",
+            "close": "닫기"
+        },
         "tools":{
             "search":{
                 "error": "위치를 찾을 수 없습니다.",
@@ -35,8 +40,8 @@ define(
 			      "label4": '세로'
 			    },
 			    "legend": "출력에 범례 추가",
-                "title": "한_Title___빠",
-                "titlePrompt": "한_Add custom title______빠"
+                "title": "제목",
+                "titlePrompt": "사용자 정의 제목 추가"
             },
 			"share": {
 				"extent": "현재 맵 범위 사용",

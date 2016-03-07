@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Karttaa ei voi luoda"
         },
+        "nav":{
+            "next": "Seuraava",
+            "previous": "Edellinen",
+            "close": "Sulje"
+        },
         "tools":{
             "search":{
                 "error": "Sijaintia ei löytynyt",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Pysty'
 			    },
 			    "legend": "Lisää selite tulokseen",
-                "title": "Å_Title___ö",
-                "titlePrompt": "Å_Add custom title______ö"
+                "title": "Otsikko",
+                "titlePrompt": "Lisää mukautettu otsikko"
             },
 			"share": {
 				"extent": "Käytä nykyisen kartan laajuutta.",

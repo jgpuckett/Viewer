@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Harita oluşturulamıyor"
         },
+        "nav":{
+            "next": "Sonraki",
+            "previous": "Önceki",
+            "close": "Kapat"
+        },
         "tools":{
             "search":{
                 "error": "Konum bulunamadı",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Dikey'
 			    },
 			    "legend": "Çıktıya gösterim ekle",
-                "title": "ı_Title___İ",
-                "titlePrompt": "ı_Add custom title______İ"
+                "title": "Başlık",
+                "titlePrompt": "Özel başlık ekle"
             },
 			"share": {
 				"extent": "Geçerli harita yayılımını kullan",

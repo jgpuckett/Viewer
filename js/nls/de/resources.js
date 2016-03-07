@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Karte kann nicht erstellt werden"
         },
+        "nav":{
+            "next": "Nächste(r)",
+            "previous": "Vorherige(r)",
+            "close": "Schließen"
+        },
         "tools":{
             "search":{
                 "error": "Position wurde nicht gefunden",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Hochformat'
 			    },
 			    "legend": "Legende zu Ausgabe hinzufügen",
-                "title": "ä_Title_____________________________________________________________Ü",
-                "titlePrompt": "ä_Add custom title______Ü"
+                "title": "Titel",
+                "titlePrompt": "Benutzerdefinierten Titel hinzufügen"
             },
 			"share": {
 				"extent": "Aktuelle Kartenausdehnung verwenden",

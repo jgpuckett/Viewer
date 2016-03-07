@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Kan kaart niet maken"
         },
+        "nav":{
+            "next": "Volgende",
+            "previous": "Vorige",
+            "close": "Sluiten"
+        },
         "tools":{
             "search":{
                 "error": "Locatie is niet gevonden",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Staand'
 			    },
 			    "legend": "Legenda toevoegen aan uitvoer",
-                "title": "Ĳ_Title___ä",
-                "titlePrompt": "Ĳ_Add custom title______ä"
+                "title": "Titel",
+                "titlePrompt": "Aangepaste titel toevoegen"
             },
 			"share": {
 				"extent": "Huidige extent van de kaart gebruiken",

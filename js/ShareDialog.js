@@ -177,12 +177,15 @@ Evented, declare, lang, has, esriNS, _WidgetBase, a11yclick, _TemplatedMixin, on
             // get url params
             var urlObject = urlUtils.urlToObject(window.location.href);
             urlObject.query = urlObject.query || {};
+            if(urlObject.query.locale){
+                delete urlObject.query.locale;
+            }
             // include extent in url
             if (this.get("useExtent") && map) {
                 // get map extent in geographic
                 var gExtent = map.geographicExtent;
                 // set extent string
-                urlObject.query.extent = gExtent.xmin.toFixed(4) + ',' + gExtent.ymin.toFixed(4) + ',' + gExtent.xmax.toFixed(4) + ',' + gExtent.ymax.toFixed(4);
+                urlObject.query.extent = gExtent.xmin.toFixed(4) + "," + gExtent.ymin.toFixed(4) + "," + gExtent.xmax.toFixed(4) + "," + gExtent.ymax.toFixed(4);
 
             } else {
                 urlObject.query.extent = null;
@@ -199,6 +202,7 @@ Evented, declare, lang, has, esriNS, _WidgetBase, a11yclick, _TemplatedMixin, on
                         url += "?";
                         useSeparator = true;
                     }
+
                     url += i + "=" + urlObject.query[i];
                 }
             }

@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Não foi possível criar o mapa"
         },
+        "nav":{
+            "next": "Seguinte",
+            "previous": "Anterior",
+            "close": "Fechar"
+        },
         "tools":{
             "search":{
                 "error": "A localização não pode ser encontrada",
@@ -35,8 +40,8 @@ define(
 			      "label4": 'Retrato (imagem)'
 			    },
 			    "legend": "Adicionar legenda à saída",
-                "title": "ã_Title___Ç",
-                "titlePrompt": "ã_Add custom title______Ç"
+                "title": "Título",
+                "titlePrompt": "Adicionar título personalizado"
             },
 			"share": {
 				"extent": "Utilizar extensão de mapa atual",
